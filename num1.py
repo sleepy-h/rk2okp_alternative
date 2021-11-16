@@ -209,9 +209,10 @@ def draw(x: list, y: list, name_x: str, name_y: str) -> None:
 
 
 if __name__ == '__main__':
-    globals_dict = {'a1': 0.01, 'a2': 0.005, 'b1': 0.01, 'b2': 0.01, 'c': 0.01, 'd': 0.015, 'Ubx': 36, 'W': 314, 'Rn': 70, 'f0': 0.428, 'ro': 0.0175, 'Xbx': 0.00001}
-    set_globals(globals_dict)
-    #get_globals()
+    #globals_dict = {'a1': 0.01, 'a2': 0.005, 'b1': 0.01, 'b2': 0.01, 'c': 0.01, 'd': 0.015, 'Ubx': 36, 'W': 314, 'Rn': 70, 'f0': 0.428, 'ro': 0.0175, 'Xbx': 0.00001}
+    #set_globals(globals_dict)
+    
+    get_globals()
     
     x_list = []
     koefs = [0.5, 0.7, 0.8, 0.9, 1, 1.2, 1.4, 1.6, 1.8]
