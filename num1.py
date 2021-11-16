@@ -88,7 +88,7 @@ def get_globals() -> None:
     # Xbx
 
     Xbx = float((input("Введите параметр якоря\n"
-                       "X[bx]: ").strip()))
+                       "X[bx]: (в МЕТРАХ)").strip()))
 
     print(f"\n{Xbx = }\n")
     globals().update({'Xbx': Xbx})
@@ -125,7 +125,7 @@ def ex_2() -> None:
     # Q, q, Wspiral
 
     Q = d * c
-    q = (math.pi / 2) * ((d_gost / 1000) ** 2)
+    q = (math.pi / 4) * ((d_gost / 1000) ** 2)
     Wspiral = Q * f0 / q
 
     print(f"\n{Q = }м^2, {q = }м^2, {Wspiral = }\n")
@@ -148,7 +148,7 @@ def ex_3() -> None:
 
     y_list = [((Wspiral ** 2) * M0 * Sb * 1000) / (2 * Xbx_tmp) for Xbx_tmp in x_list]
 
-    draw(x_list, y_list, name_x='Xbx, мм', name_y='L, мГн')
+    draw(x_list, y_list, name_x='Xbx, м', name_y='L, мГн')
 
 
 def ex_4() -> None:
@@ -165,7 +165,7 @@ def ex_4() -> None:
 
     y_list = [((Rn ** 2) + (((Wspiral ** 2) * M0 * W * Sb) / (2 * Xbx_tmp)) ** 2) ** 0.5 for Xbx_tmp in x_list]
 
-    draw(x_list, y_list, name_x='Xbx, мм', name_y='Z, Ом')
+    draw(x_list, y_list, name_x='Xbx, м', name_y='Z, Ом')
 
 
 def ex_5() -> None:
@@ -181,7 +181,7 @@ def ex_5() -> None:
     y_list = [(Ubx / ((Rn ** 2 + ((Wspiral ** 2 * M0 * W * Sb) / (2 * Xbx_tmp)) ** 2) ** 0.5)) * 1000 for Xbx_tmp in
               x_list]
 
-    draw(x_list, y_list, name_x='Xbx, мм', name_y='I, мA')
+    draw(x_list, y_list, name_x='Xbx, м', name_y='I, мA')
 
 
 def draw(x: list, y: list, name_x: str, name_y: str) -> None:
@@ -209,9 +209,9 @@ def draw(x: list, y: list, name_x: str, name_y: str) -> None:
 
 
 if __name__ == '__main__':
-    #globals_dict = {'a1': 0.01, 'a2': 0.005, 'b1': 0.01, 'b2': 0.01, 'c': 0.01, 'd': 0.015, 'Ubx': 36, 'W': 314, 'Rn': 70, 'f0': 0.428, 'ro': 0.0175, 'Xbx': 0.01}
-    #set_globals(globals_dict)
-    get_globals()
+    globals_dict = {'a1': 0.01, 'a2': 0.005, 'b1': 0.01, 'b2': 0.01, 'c': 0.01, 'd': 0.015, 'Ubx': 36, 'W': 314, 'Rn': 70, 'f0': 0.428, 'ro': 0.0175, 'Xbx': 0.00001}
+    set_globals(globals_dict)
+    #get_globals()
     
     x_list = []
     koefs = [0.5, 0.7, 0.8, 0.9, 1, 1.2, 1.4, 1.6, 1.8]
